@@ -1,0 +1,13 @@
+The following CSS code snippet attempts to style a list item using the `:nth-child` pseudo-class selector, however, it fails to work as expected:
+
+```css
+li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+li:nth-child(even) {
+  background-color: #fff;
+}
+```
+
+The issue stems from the fact that the `:nth-child` selector targets *all* elements within the parent, regardless of their type. If there are other elements (e.g., `<br>`, `<hr>`, comments) interspersed within the list, the `odd`/`even` numbering gets disrupted, and the alternating background color effect doesn't apply correctly.
